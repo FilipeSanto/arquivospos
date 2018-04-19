@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/WebIntent.iml" filepath="$PROJECT_DIR$/WebIntent.iml" />
+      <module fileurl="file://C:\Users\Filipe\Documents\Arquivos POS\Desenvolvimento Android\aulas-pmob-master\WebIntent\WebIntent.iml" filepath="C:\Users\Filipe\Documents\Arquivos POS\Desenvolvimento Android\aulas-pmob-master\WebIntent\WebIntent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Filipe\Documents\Arquivos POS\Desenvolvimento Android\aulas-pmob-master\WebIntent\app\app.iml" filepath="C:\Users\Filipe\Documents\Arquivos POS\Desenvolvimento Android\aulas-pmob-master\WebIntent\app\app.iml" />
+    </modules>
+  </component>
+</project>

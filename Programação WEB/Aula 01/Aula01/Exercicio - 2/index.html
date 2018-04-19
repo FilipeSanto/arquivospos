@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Meu primeiro JavaScript</title>
+		<style>
+			span {
+				width:120px;
+				float:left;
+			}
+		</style>
+		<script type="text/javascript" src="script.js"></script>
+	</head>
+	<body>
+		<h1>Programação Web com Servelets, JSP e JSTL</h1>
+		<form>
+			<table border="0" style="width: 100%">
+				<tr>
+					<td style="width: 15%">
+						<span>Nome:</span></br>
+						<input type="text" name="nome" size="25">
+					</td>
+					<td style="width: 15%">
+						<span>Sobrenome:</span></br>
+						<input type="text" name="nome" size="25">
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 15%">
+						<span>Telefone fixo:</span></br>
+						<input type="text" name="telefoneFixo" size="25">
+					</td>
+					<td style="width: 15%">
+						<span>Telefone celular:</span></br>
+						<input type="text" name="telefoneCelular" size="25">
+					</td>
+					<td style="width: 40%">
+						<span>Email:</span></br>
+						<input type="text" name="email" size="50">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span id="sp1">Senha:</span>
+						<input id="p1" type="password" name="senha" size="25">
+					</td>
+					<td>
+						<span id="sp2">Confirmar Senha:</span>
+						<input id="p2" type="password" name="verificaSenha" size="25">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button type="button" onclick="fverificaSenha()">Submit</button>
+						<!--input id="send" type="button" name="send" value="send" onclick="verificaSenha()"-->
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

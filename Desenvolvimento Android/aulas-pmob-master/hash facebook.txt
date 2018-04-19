@@ -1,0 +1,15 @@
+C:\temp\openssl-0.9.8k_X64
+
+      
+
+      
+keytool -exportcert -alias androiddebugkey -keystore "C:\Users\Filipe\.android\debug.keystore" | "C:\temp\openssl-0.9.8k_X64\bin\openssl" sha1 -binary | "C:\temp\openssl-0.9.8k_X64\bin\openssl" base64
+ 
+
+pKAMBwKonbZxEsavnIvfBNXdrmE=
+
+
+
+      
+keytool -exportcert -alias pKAMBwKonbZxEsavnIvfBNXdrmE= -keystore pKAMBwKonbZxEsavnIvfBNXdrmE= | openssl sha1 -binary | openssl base64
+

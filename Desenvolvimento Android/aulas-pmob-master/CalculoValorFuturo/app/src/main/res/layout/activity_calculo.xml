@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.filipe.calculovalorfuturo.CalculoActivity">
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView
+            android:id="@+id/txtVlPresente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Valor presente (R$):"
+            android:textSize="12pt"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="69dp" />
+
+        <EditText
+            android:id="@+id/ETxtVLPresente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Digite o valor presente"
+            android:inputType="textPersonName"
+            android:text=""
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="167dp" />
+
+        <TextView
+            android:id="@+id/txtMeses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Meses"
+            android:textSize="12pt"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="69dp" />
+
+        <EditText
+            android:id="@+id/ETxtMeses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Digite a quantidade de meses"
+            android:inputType="textPersonName"
+            android:text=""
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="167dp" />
+
+        <TextView
+            android:id="@+id/txtTxJuros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Taxa de Juros(%):"
+            android:textSize="12pt"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="69dp" />
+
+        <EditText
+            android:id="@+id/ETxtJuros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Digite a taxa de juros"
+            android:inputType="textPersonName"
+            android:text=""
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="167dp" />
+
+        <Button
+            android:id="@+id/btCalcula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="Calcular"
+            android:text="Calcular" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

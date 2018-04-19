@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "772977578843",
+    "firebase_url": "https://projetoteste-98047.firebaseio.com",
+    "project_id": "projetoteste-98047",
+    "storage_bucket": "projetoteste-98047.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772977578843:android:a6dc64235db14e78",
+        "android_client_info": {
+          "package_name": "unitri.edu.br.pushnotifications"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772977578843-9omvubqgmsiho24erm3gsd8i4enolp4t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmlofAVaUZS7pvFiDhNORvXlUlrJHxwYQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

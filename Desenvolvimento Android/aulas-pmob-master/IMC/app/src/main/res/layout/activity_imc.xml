@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="16dp">
+
+    <TextView
+        android:id="@+id/tvSolicita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="50dp"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:text="Informe os dados para calcular o seu IMC"/>
+
+
+    <EditText
+        android:id="@+id/txtAltura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:textAlignment="center"
+        android:ems="10"
+        android:hint="altura (m)"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/txtPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
+        android:ems="10"
+        android:hint="peso (kg)"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btCalcular"
+        android:layout_width="213dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
+        android:onClick="calculaIMC"
+        android:text="Calcular" />
+
+</LinearLayout>

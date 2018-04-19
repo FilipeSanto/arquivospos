@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.edu.unitri.myapplication.MainActivity">
+    <item
+        android:id="@+id/action_item1"
+        android:title="@string/action_item1"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_help_black_24dp"/>
+    <item
+        android:id="@+id/action_item2"
+        android:title="Ligar para um número"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_item3"
+        android:title="Discar um número"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_item4"
+        android:title="Enviar um e-mail"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_item5"
+        android:title="Abrir o mapa"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_item6"
+        android:title="Abrir o navegador"
+        app:showAsAction="ifRoom" />
+</menu>

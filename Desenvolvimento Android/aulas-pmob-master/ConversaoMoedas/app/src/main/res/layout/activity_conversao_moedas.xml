@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="16dp">
+
+    <TextView
+        android:id="@+id/tvIdioma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Converter moedas"
+        android:textSize="30dp" />
+
+    <RadioGroup
+        android:id="@+id/rdIdioma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="100dp"
+        android:height="100dp">
+
+        <RadioButton
+            android:id="@+id/rbEnglish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onRadioButtonClicked"
+            android:text="English" />
+
+        <RadioButton
+            android:id="@+id/rbEspanol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onRadioButtonClicked"
+            android:text="Español" />
+
+        <RadioButton
+            android:id="@+id/rbPortugues"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onRadioButtonClicked"
+            android:text="Portugues" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvConvert"
+        android:layout_width="207dp"
+        android:layout_height="wrap_content"
+        android:text="Escolha a conversão"
+        android:textSize="20dp" />
+
+
+    <EditText
+        android:id="@+id/txtValor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Digite o valor"
+        android:inputType="textPersonName" />
+
+        <RadioGroup
+            android:id="@+id/rgConvert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <RadioButton
+                android:id="@+id/rbRealDolar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Real para Dólar" />
+
+            <RadioButton
+                android:id="@+id/rbDolarReal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dólar para Real" />
+
+            <RadioButton
+                android:id="@+id/rbEuroDolar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Euro para Dólar" />
+
+            <RadioButton
+                android:id="@+id/rbDolarEuro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dólar para Euro" />
+
+            <RadioButton
+                android:id="@+id/rbRealEuro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Real para Euro" />
+
+            <RadioButton
+                android:id="@+id/rbEuroReal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Euro para Real" />
+
+        </RadioGroup>
+
+    <Button
+        android:id="@+id/btConverter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Converter"
+        android:text="Converter" />
+
+</LinearLayout>
