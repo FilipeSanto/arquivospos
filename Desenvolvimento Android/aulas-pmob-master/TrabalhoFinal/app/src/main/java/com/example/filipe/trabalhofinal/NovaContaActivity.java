@@ -1,40 +1,29 @@
-package com.example.filipe.trabalhofinal;
-
-import android.app.ProgressDialog;
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.content.Intent;
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
-
-/**
- * Created by Filipe on 07/04/2018.
- */
-
 public class NovaContaActivity extends AppCompatActivity {
+
+
+	ProgressDialog progressDialog;
+	EditText edEmail, edSenha, edNome;
+    String email, senha, nome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nova_conta);
-        cadastrar();
+        etNome = findViewById(R.id.editTextNome2);
+        etEmail = findViewById(R.id.editTextEmail2);
+        etSenha = findViewById(R.id.editTextSenha2);
+
+        final Button button = findViewById(R.id.buttonCad);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                nome = edtNome.getText().toString();
+                email = edtEmail.getText().toString();
+                senha = edtSenha.getText().toString();
+
+                cadastrar(nome, email, senha);
+            }
+        });
     }
 
     ProgressDialog progressDialog;
@@ -44,112 +33,83 @@ public class NovaContaActivity extends AppCompatActivity {
 
         final String url = "http://ec2-34-230-46-185.compute-1.amazonaws.com:8080/v1/users/";
         final RequestQueue queue = Volley.newRequestQueue(this);
-        final EditText EtNome = findViewById(R.id.editTextNome2);
-        EditText teste = EtNome;
-        final String nome = teste.getText().toString();
-        final EditText EtEmail = findViewById(R.id.editTextEmail2);
-        final EditText EtSenha = findViewById(R.id.editTextSenha2);
-        final Button button3 = findViewById(R.id.buttonCad);
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cadastro();
+        JSONObject postRequest = new JSONObject();
 
+        try {
+            postRequest.put("userName", nome);
+            postRequest.put("email", email);
+            postRequest.put("pass", senha);
+            //postRequest.put("appid","4fa74572c6b3268a6ae5bd1150d7a748");
+
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
 
-        /*if (message.EqualsIgnoreCase("true") {*/
-            /*Intent intent = new Intent(NovaContaActivity.this, MainActivity.class);
-            startActivity(intent);*/
-     /*   }*/
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(
+                Request.Method.POST,
+                url,
+                postRequest,
+                new Response.Listener<JSONObject>() {
 
-     private void cadastro(){
+                    /* Callback chamado em caso de sucesso */
 
-            JSONObject postRequest = new JSONObject();
+                    @Override
+                    public void onResponse(JSONObject response) {
 
+                        progressDialog.dismiss();
+                        Log.d(TAG, "API Response: " + response);
+                        String message = response.optString("sucess");
+                        if(message.equals("true")){
+                            initiateActivity();
+                        }else{
+                            AlertDialog dialog = new AlertDialog.Builder(NewAccountActivity.this).create();
+                            dialog.setMessage("haahaha");
+                            dialog.show();
+                        }
+                    }
+                },
 
+                /* Callback chamado em caso de erro */
 
-            try {
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
 
-                postRequest.put("userName", teste);
-                showDialog("nome: ", teste);
-                postRequest.put("email", EtEmail);
-                postRequest.put("pass", EtSenha);
-
-            } catch (JSONException e) {
-                e.printStackTrace();
+                        Log.e(TAG, "Ocorreu um erro ao chamar a API " + error);
+                        progressDialog.dismiss();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                //add params <key,value>
+                return params;
             }
 
-            JsonObjectRequest jsonObjReq = new JsonObjectRequest(
-                    Request.Method.POST,
-                    url,
-                    postRequest,
-                    new Response.Listener<JSONObject>() {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
 
-                        /* Callback chamado em caso de sucesso */
+                Map<String, String> headers = new HashMap<String, String>();
+                String auth = "Basic MzgxNTc5ZmEtZDI0MC00Mzg3LTkyNTMtZWY2YjgwYTdhMWEwOmM4NDM4M2Y0LTJiMDgtNGJiYy04MjQwLWI0YjQ5YTFlYWQzZQ==";
+                headers.put("Authorization", auth);
+                return headers;
+            }
+        };
 
-                        @Override
-                        public void onResponse(JSONObject response) {
+        queue.add(jsonObjReq);
+        showProgressDialog();
+    }
 
-                            /*progressDialog.dismiss();*/
-                            Log.d(TAG, "API Response: " + response);
-                            String message = response.optString("sucess");
-                            showDialog("Informação", message);
+    private void showProgressDialog() {
+        progressDialog = new ProgressDialog(NewAccountActivity.this);
+        progressDialog.setMessage("Por favor, aguarde");
+        progressDialog.show();
+    }
 
-                        }
-                    },
-
-                    /* Callback chamado em caso de erro */
-
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-
-                            Log.e(TAG, "Ocorreu um erro ao chamar a API " + error);
-                            progressDialog.dismiss();
-                        }
-                    }) {
-                @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
-                    Map<String, String> params = new HashMap<String, String>();
-                    //add params <key,value>
-                    return params;
-                }
-
-                @Override
-                public Map<String, String> getHeaders() throws AuthFailureError {
-
-                    Map<String, String> headers = new HashMap<String, String>();
-                    String auth = "Basic MzgxNTc5ZmEtZDI0MC00Mzg3LTkyNTMtZWY2YjgwYTdhMWEwOmM4NDM4M2Y0LTJiMDgtNGJiYy04MjQwLWI0YjQ5YTFlYWQzZQ==";
-                    headers.put("Authorization", auth);
-                    return headers;
-                }
-            };
-
-            queue.add(jsonObjReq);
-            showProgressDialog();
-        }
-
-        private void showProgressDialog() {
-            ProgressDialog progressDialog = new ProgressDialog(NovaContaActivity.this);
-            progressDialog.setMessage("Por favor, aguarde");
-            progressDialog.show();
-        }
-
-        private void showDialog(String title, String message) {
-            AlertDialog alertDialog = new AlertDialog.Builder(NovaContaActivity.this).create();
-            alertDialog.setTitle(title);
-            alertDialog.setMessage(message);
-            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    });
-            alertDialog.show();
-        }
-
-      });
-}
+    private void initiateActivity(){
+        Intent intent = new Intent(this, PrincipalActivity.class);
+        startActivity(intent);
+    }
 }
 
 
