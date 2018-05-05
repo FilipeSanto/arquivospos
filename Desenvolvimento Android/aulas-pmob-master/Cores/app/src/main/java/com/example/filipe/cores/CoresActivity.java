@@ -25,16 +25,16 @@ public class CoresActivity extends AppCompatActivity {
         view = findViewById(R.id.view);
 
         if (rb1.isChecked()) {
-            lcoresl.setBackgroundColor(255255255);
+            view.setBackgroundColor(Color.rgb(255, 255, 255));
         }
         if (rb2.isChecked()) {
-            view.setBackgroundColor(2552550);
+            view.setBackgroundColor(Color.rgb(255, 255, 0));
         }
         if (rb3.isChecked()) {
-            view.setBackgroundColor(255192203);
+            view.setBackgroundColor(Color.rgb(255, 105, 180));
         }
         if (rb4.isChecked()) {
-            view.setBackgroundColor(30144255);
+            view.setBackgroundColor(Color.rgb(0, 0, 255));
             
         }
     }
