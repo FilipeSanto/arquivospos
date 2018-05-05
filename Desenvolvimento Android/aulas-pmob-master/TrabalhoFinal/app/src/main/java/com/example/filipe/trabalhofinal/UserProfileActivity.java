@@ -56,6 +56,7 @@ public class UserProfileActivity extends AppCompatActivity {
         btLogout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 LoginManager.getInstance().logOut();
+                sharedPreferences.edit().clear().commit();
                 Intent intent = new Intent(UserProfileActivity.this, MainActivity.class);
                 startActivity(intent);
             }
