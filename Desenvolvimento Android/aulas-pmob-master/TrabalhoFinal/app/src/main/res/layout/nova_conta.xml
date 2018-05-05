@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Informe sua senha"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             tools:layout_editor_absoluteX="51dp"
             tools:layout_editor_absoluteY="260dp" />
 
